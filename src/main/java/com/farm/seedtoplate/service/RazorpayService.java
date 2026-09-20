@@ -134,7 +134,9 @@ public class RazorpayService {
     private JsonNode execute(HttpRequest request) throws IOException, InterruptedException {
         HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
         if (response.statusCode() < 200 || response.statusCode() >= 300) {
-            throw new ApiException("Razorpay request failed with status " + response.statusCode());
+            String body = response.body() == null ? "" : response.body();
+            String detail = body.isBlank() ? "" : ": " + body.substring(0, Math.min(body.length(), 500));
+            throw new ApiException("Razorpay request failed with status " + response.statusCode() + detail);
         }
         return objectMapper.readTree(response.body());
     }
