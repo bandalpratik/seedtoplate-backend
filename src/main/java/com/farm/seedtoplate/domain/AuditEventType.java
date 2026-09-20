@@ -1,0 +1,13 @@
+package com.farm.seedtoplate.domain;
+
+public enum AuditEventType {
+    BATCH_CREATED,
+    WEIGH_IN_CAPTURED,
+    STAGE_UPDATED,
+    RESERVATION_CREATED,
+    RESERVATION_CANCELLED,
+    RELEASE_CONFIRMED,
+    PAYMENT_CREATED,
+    PAYMENT_SETTLED,
+    MANIFEST_UPDATED
+}

@@ -1,0 +1,12 @@
+package com.farm.seedtoplate.dto;
+
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotNull;
+import java.math.BigDecimal;
+
+public record ReleasePreviewRequest(
+    @DecimalMin("0.0") BigDecimal mandiRate,
+    @NotNull @DecimalMin("0.01") BigDecimal releasedKg,
+    @NotNull @DecimalMin("0.0") BigDecimal pricePerKg,
+    String note
+) {}
