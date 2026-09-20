@@ -11,7 +11,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @Configuration
 public class CorsConfig {
 
-    @Value("${seedtoplate.frontend.origin-patterns:http://localhost:5173,http://localhost:5174,http://localhost:4173,http://127.0.0.1:5173,http://127.0.0.1:5174,http://127.0.0.1:4173}")
+    @Value("${seedtoplate.frontend.origin-patterns:http://localhost:5173,http://localhost:5174,http://localhost:4173,http://127.0.0.1:5173,http://127.0.0.1:5174,http://127.0.0.1:4173,https://seedtoplate-ui.vercel.app/}")
     private List<String> frontendOriginPatterns;
 
     @Bean
